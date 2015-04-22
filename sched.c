@@ -6504,6 +6504,9 @@ __setscheduler(struct rq *rq, struct task_struct *p, int policy, int prio)
 	case SCHED_RR:
 		p->sched_class = &rt_sched_class;
 		break;
+	case SCHED_OTHER_RR:
+		p->sched_class = &other_rr_sched_class;
+		break;
 	}
 
 	p->rt_priority = prio;
