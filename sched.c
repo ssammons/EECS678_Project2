@@ -6558,7 +6558,7 @@ recheck:
 		policy != SCHED_BATCH && policy != SCHED_IDLE)
 			return -EINVAL;
 		if (policy == SCHED_OTHER_RR) {
-			printk("OTHER_RR scheduling selected\n");
+			printk(KERN_INFO "OTHER_RR scheduling selected\n");
 		}
 	}
 
@@ -7009,7 +7009,7 @@ SYSCALL_DEFINE0(sched_yield)
 SYSCALL_DEFINE1(sched_other_rr_setquantum, unsigned int, quantum)
 {
 	other_rr_time_slice = quantum;
-	printk("other_rr_time_slice changed\n");
+	printk(KERN_INFO "other_rr_time_slice changed\n");
 	return 0;
 }
 //---------------------------------------------------------------------------------------
